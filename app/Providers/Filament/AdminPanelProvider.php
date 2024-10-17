@@ -22,7 +22,9 @@ use Awcodes\FilamentBadgeableColumn\Components\Badge;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\AuthenticateSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
+use Swis\Filament\Backgrounds\ImageProviders\MyImages;
 use Filament\Http\Middleware\DisableBladeIconComponents;
+use Swis\Filament\Backgrounds\FilamentBackgroundsPlugin;
 use Filament\Http\Middleware\DispatchServingFilamentEvent;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use \Okeonline\FilamentArchivable\FilamentArchivablePlugin;
@@ -103,6 +105,14 @@ class AdminPanelProvider extends PanelProvider
                 Authenticate::class,
             ])
             ->plugins([
+                FilamentBackgroundsPlugin::make()
+                    ->showAttribution(false)
+                    ->imageProvider(
+                        MyImages::make()
+                            ->directory('images/background')
+                    )
+                    ->remember(900)
+                ,
                 FilamentEditProfilePlugin::make()
                     ->slug('my-profile')
                     ->setTitle('My Profile')

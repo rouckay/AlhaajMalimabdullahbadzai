@@ -43,6 +43,7 @@
         "pxlrbt/filament-spotlight": "^1.2",
         "shuvroroy/filament-spatie-laravel-backup": "^2.2",
         "spatie/laravel-settings": "^3.3",
+        "swisnl/filament-backgrounds": "^1.1",
         "tomatophp/filament-pwa": "^1.0",
         "ysfkaya/filament-phone-input": "^2.3",
         "z3d0x/filament-logger": "^0.7.2"

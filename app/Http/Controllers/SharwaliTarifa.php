@@ -229,15 +229,7 @@ class SharwaliTarifa extends Controller
         $mobile_number = $filament->customer->mobile_number ?? 'Unknown';
         $job = $filament->customer->job ?? 'Unknown';
         $Customer_image = $filament->customer->Customer_image ?? 'Unknown';
-        $responsable_name = $filament->customer->responsable_name ?? 'Unknown';
-        $responsable_father_name = $filament->customer->responsable_father_name ?? 'Unknown';
-        $responsable_grand_father_name = $filament->customer->responsable_grand_father_name ?? 'Unknown';
-        $responsable_province = $filament->customer->responsable_province ?? 'Unknown';
-        $responsable_village = $filament->customer->responsable_village ?? 'Unknown';
-        $responsable_tazkira = $filament->customer->responsable_tazkira ?? 'Unknown';
-        $responsable_mobile_number = $filament->customer->responsable_mobile_number ?? 'Unknown';
-        $responsable_image = $filament->customer->responsable_image ?? 'Unknown';
-        $responsable_job = $filament->customer->responsable_job ?? 'Unknown';
+
         $numera_id = $filament->numeraha->numera_id ?? '0 AFG';
         $numera_type = $filament->numeraha->numera_type ?? 'Unknown';
         $Land_Area = $filament->numeraha->Land_Area ?? '0 AFG';
@@ -270,21 +262,7 @@ class SharwaliTarifa extends Controller
             'ratio' => true,
         ]);
 
-        $templateProcessor->setImageValue('responsable_image', [
-            'path' => storage_path('app/public/' . $responsable_image),
-            'width' => 100,
-            'height' => 100,
-            'ratio' => true,
-        ]);
 
-        $templateProcessor->setValue('responsable_name', $responsable_name);
-        $templateProcessor->setValue('responsable_father_name', $responsable_father_name);
-        $templateProcessor->setValue('responsable_grand_father_name', $responsable_grand_father_name);
-        $templateProcessor->setValue('responsable_province', $responsable_province);
-        $templateProcessor->setValue('responsable_village', $responsable_village);
-        $templateProcessor->setValue('responsable_tazkira', $responsable_tazkira);
-        $templateProcessor->setValue('responsable_mobile_number', $responsable_mobile_number);
-        $templateProcessor->setValue('responsable_job', $responsable_job);
         $templateProcessor->setValue('numera_id', $numera_id);
         $templateProcessor->setValue('numera_type', $numera_type);
         $templateProcessor->setValue('Land_Area', $Land_Area);
